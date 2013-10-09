@@ -1,0 +1,240 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+DROP SCHEMA IF EXISTS `Bedelia_DB` ;
+CREATE SCHEMA IF NOT EXISTS `Bedelia_DB` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `Bedelia_DB` ;
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`tipo_doc`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`tipo_doc` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`tipo_doc` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `descripcion_tipo_doc` VARCHAR(10) NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`sexo`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`sexo` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`sexo` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `descripcion_sexo` VARCHAR(10) NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`persona`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`persona` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`persona` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `tipo_doc` INT NOT NULL ,
+  `nro_doc` VARCHAR(10) NOT NULL ,
+  `ape_nom` VARCHAR(45) NOT NULL ,
+  `direccion` VARCHAR(45) NOT NULL ,
+  `fecha_nac` DATE NOT NULL ,
+  `sexo` INT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  INDEX `fk_persona_tipo_doc` (`tipo_doc` ASC) ,
+  INDEX `fk_persona_sexo` (`sexo` ASC) ,
+  UNIQUE INDEX `nro_doc_UNIQUE` (`nro_doc` ASC) ,
+  CONSTRAINT `fk_persona_tipo_doc`
+    FOREIGN KEY (`tipo_doc` )
+    REFERENCES `Bedelia_DB`.`tipo_doc` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_persona_sexo`
+    FOREIGN KEY (`sexo` )
+    REFERENCES `Bedelia_DB`.`sexo` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`cargo`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`cargo` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`cargo` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `descripcion_cargo` VARCHAR(10) NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`profesor`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`profesor` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`profesor` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `cargo` INT NOT NULL ,
+  `profesor_persona` INT NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_profesor_cargo` (`cargo` ASC) ,
+  INDEX `fk_profesor_persona` (`profesor_persona` ASC) ,
+  CONSTRAINT `fk_profesor_cargo`
+    FOREIGN KEY (`cargo` )
+    REFERENCES `Bedelia_DB`.`cargo` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_profesor_persona`
+    FOREIGN KEY (`profesor_persona` )
+    REFERENCES `Bedelia_DB`.`persona` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`carrera`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`carrera` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`carrera` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `nombre_carrera` VARCHAR(30) NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`materia`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`materia` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`materia` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `nombre_materia` VARCHAR(30) NOT NULL ,
+  `fecha_inicio_cursada` DATE NOT NULL ,
+  `fecha_fin_cursada` DATE NOT NULL ,
+  `carrera` INT NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_materia` (`carrera` ASC) ,
+  CONSTRAINT `fk_materia`
+    FOREIGN KEY (`carrera` )
+    REFERENCES `Bedelia_DB`.`carrera` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`aula`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`aula` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`aula` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `descripcion_aula` VARCHAR(30) NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`comision`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`comision` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`comision` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `descripcion_comision` CHAR NOT NULL ,
+  `materia` INT NOT NULL ,
+  `aula` INT NOT NULL ,
+  `profesor` INT NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_comision_profesor` (`profesor` ASC) ,
+  INDEX `fk_comision_aula` (`aula` ASC) ,
+  INDEX `fk_comision_materia` (`materia` ASC) ,
+  CONSTRAINT `fk_comision_profesor`
+    FOREIGN KEY (`profesor` )
+    REFERENCES `Bedelia_DB`.`profesor` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comision_aula`
+    FOREIGN KEY (`aula` )
+    REFERENCES `Bedelia_DB`.`aula` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comision_materia`
+    FOREIGN KEY (`materia` )
+    REFERENCES `Bedelia_DB`.`materia` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`fichaje`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`fichaje` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`fichaje` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `fecha_hora` TIMESTAMP NOT NULL ,
+  `entrada_salida` TINYINT(1) NOT NULL ,
+  `observacion` VARCHAR(140) NOT NULL ,
+  `aula` INT NOT NULL ,
+  `comision` INT NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_fichaje_comision` (`comision` ASC) ,
+  INDEX `fk_fichaje_aula` (`aula` ASC) ,
+  CONSTRAINT `fk_fichaje_comision`
+    FOREIGN KEY (`comision` )
+    REFERENCES `Bedelia_DB`.`comision` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_fichaje_aula`
+    FOREIGN KEY (`aula` )
+    REFERENCES `Bedelia_DB`.`aula` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Bedelia_DB`.`temas_dados`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Bedelia_DB`.`temas_dados` ;
+
+CREATE  TABLE IF NOT EXISTS `Bedelia_DB`.`temas_dados` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `fecha_hora` TIMESTAMP NOT NULL ,
+  `comision` INT NOT NULL ,
+  `tema` VARCHAR(100) NOT NULL ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_temas_dados_comision` (`comision` ASC) ,
+  CONSTRAINT `fk_temas_dados_comision`
+    FOREIGN KEY (`comision` )
+    REFERENCES `Bedelia_DB`.`comision` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
