@@ -191,12 +191,12 @@ function sql_persona_dni($con,$tabla,$el_nro_doc){
 		try {
 
 			//armamos el sql
-			$sql = "SELECT pr.id, td.descripcion AS tipo_doc, p.nro_doc, p.ape_nom, p.direccion, p.fecha_nac, s.descripcion_sexo AS sexo
-					FROM persona AS p, tipo_doc AS td, sexo AS s, profesor AS pr, alumno AS a
-					WHERE p.tipo_doc_id = td.id
-					AND p.sexo_id = s.id
-					AND a.id = p.id
-					GROUP BY td.descripcion, p.nro_doc";
+			$sql = "SELECT
+						p.id, p.nro_doc, p.ape_nom, p.tipo_doc_id, al.persona_id
+					FROM
+						persona AS p, alumno AS al
+					WHERE
+						p.id = al.persona_id;";
 
 			
 			//preparamos un statement con el sql anterior

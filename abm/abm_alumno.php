@@ -20,7 +20,7 @@
 
 		<input type="button" value="Alta" onclick="location.href='../altas_form/alta_alumno_form.php';">
 		<input type="button" value="Baja" onclick="location.href='../bajas_form/baja_alumno_form.php';">
-		<input type="button" value="Modificacion" onclick="location.href='../mod_form/modifica_alumno_form.php';">
+		<input type="button" value="Modificacion" onclick="location.href='../mod_form/mod_alumno_form.php';">
 		<input type="button" value="Salir" onclick="location.href='xxxxxx.php';">
 	
 	

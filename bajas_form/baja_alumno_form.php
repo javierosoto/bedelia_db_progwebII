@@ -20,7 +20,7 @@
 
 	</header>
 	<article>
-			<form align="center" name="baja_alumno_form" action="baja_alumno_sql.php" method="post" >
+			<form align="center" name="baja_alumno_form" action="../funcion_sql/bajas/baja_alumno_sql.php" method="post" >
 				<?php $con = conectar();?>
 
 				<!-- seleccionar el tipo de documento -->
@@ -40,8 +40,8 @@
 				<br>
 				<br>
 
-				<input type="submit" value="Cancelar" />
-				<input type="submit" value="Buscar" />
+				<input type="submit" value="Cancelar" onclick="location.href='../abm/abm_alumnos.php';"/>
+				<input type="submit" value="Borrar" />
 				
 			
 			</form>

@@ -13,6 +13,10 @@
 	$est_alumno = $_POST['est_alum_form'];
 	$opt_carrera = isset($_POST['opt_carrera_form']) ? $_POST['opt_carrera_form'] : null; 
 
+
+	/*
+	 * damos de alta a la persona
+	 */
 	try {
 
 		//armamos el sql
@@ -75,7 +79,7 @@
 
 		$results = $stmt->fetch();
 
-		var_dump ($results);
+		$id_pers = $results['id'];
 
 
 	}catch (Exception $e){
@@ -86,10 +90,27 @@
 
 	try
 	{
-		$sql_alum="INSERT INTO alumno "
-	
+		$sql_alum="INSERT INTO alumno (id, persona_id, estado_id)
+					VALUES (NULL, :pers, :estado);";
 
+		$stmt = $con->prepare($sql_alum);
+
+		//especificamos 
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+		$stmt->bindParam(':pers', $id_pers);
+		$stmt->bindParam(':estado',$opt_carrera);
+
+		$stmt->execute();
+	
+		echo $sql_alum;
+		echo $id_pers."<br>";
+		echo $opt_carrera;
+
+	}catch (Exception $e){
+		echo 'Error de conexion a la DB : '.$e->getMassage();
+		die();
 
 		}
 	
-	//header('Location:../../abm/abm_alumno.php');
+	header('Location:../../abm/abm_alumno.php');
