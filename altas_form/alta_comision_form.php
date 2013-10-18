@@ -5,6 +5,12 @@
 	<?php require '../error.php';?>
 	<?php require '../funcion_sql/funciones_sql.php';?>
 	<?php require '../funcion_sql/conexion.php';?>
+
+	
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/style.css" rel="stylesheet">
+
 	
 </head>
 
@@ -13,20 +19,21 @@
 		<header>
 
 		</header>
-			<form align="center" name="alta_materia_form" action="xxxxxx.php" method="post" >
+			<form role="form" align="center" name="alta_materia_form" action="../funcion_sql/altas/alta_comision_sql.php" method="post" >
 
-				<!-- xxxxxxxxxxxxx -->
-				<label align="left">Comision</label>
-				<input type="text" name="alta_comision_materia" placeholder="Comision" />
+			<div class="form-group">
+				<!-- ingresa nombre de la comision -->
+				<label><strong>Comision</strong></label>
+				<input type="text" name="alta_comision_materia" placeholder="Ingrese comision" />
 				<br>
 				<!-- seleccion de materia -->
-				<label>Materia</label>
+				<label><strong>Materia</strong></label>
 				<?php $con = conectar();?>
-				<?php $result = sql_tabla_todo($con,"materia");?>
-				<select name="opt_materia">
+				<?php $result = sql_tabla_materias_carrera($con);?>
+				<select  name="opt_materia">
 						<?php foreach ($result as $valor):?>
-							<option value="<?php echo $valor['id'];?>">
-								<?php echo $valor['nombre_materia'];?>
+							<option value="<?php echo $valor['id_ma'];?>">
+								<?php echo $valor['nombre_materia']." - ".$valor['nombre_carrera'];?>
 							</option>
 						<?php endforeach;?>
 					
@@ -34,7 +41,7 @@
 				<br>
 
 				<!-- seleccion de aula -->
-				<label>Aula</label>
+				<label><strong>Aula</strong></label>
 				<?php $result = sql_tabla_todo($con,"aula");?>
 				<select name="opt_aula">
 						<?php foreach ($result as $valor):?>
@@ -47,9 +54,9 @@
 				<br>
 
 				<!-- seleccion profesor para la comision -->
-				<label>Profesor</label>
+				<label><strong>Profesor</strong></label>
 				<?php $result = sql_profesores($con);?>
-				<select name="opt_profesor">
+				<select  name="opt_profesor">
 						<?php foreach ($result as $valor):?>
 							<option value="<?php echo $valor['prof_id'];?>">
 								<?php echo $valor['ape_nom'];?>
@@ -63,10 +70,10 @@
 				<br>
 				<br>
 				<br>
-				<input type="submit" value="Cancelar" onclick="location.href='../abm/abm_comision';"/>
+				<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 				
 				<input type="submit" value="Guardar" />
-
+			</div>
 			</form>
 		
 
@@ -78,7 +85,10 @@
 		</footer>
 
 	</article>
-
+	S<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 	
 </body>
 

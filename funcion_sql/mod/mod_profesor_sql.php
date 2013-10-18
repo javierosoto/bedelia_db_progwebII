@@ -64,4 +64,4 @@
 		
 	}
 
-	header('Location:../../abm/abm_profesor.php');
+	header('Location:../../abm_menu.php');

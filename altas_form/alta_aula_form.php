@@ -17,7 +17,7 @@
 				<br>
 				<br>
 				<br>
-				<input type="submit" value="Cancelar" />
+				<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 				
 				<input type="submit" value="Guardar" />
 				

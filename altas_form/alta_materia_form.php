@@ -13,7 +13,7 @@
 		<header>
 
 		</header>
-			<form align="center" name="alta_materia_form" action="xxxxxx.php" method="post" >
+			<form align="center" name="alta_materia_form" action="../funcion_sql/altas/alta_materia_sql.php" method="post" >
 
 				<!-- xxxxxxxxxxxxx -->
 				<label align="left">Nombre materia</label>
@@ -40,7 +40,7 @@
 				</select>
 				<br>
 				<br>
-				<input type="submit" value="Cancelar" />
+				<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 				
 				<input type="submit" value="Guardar" />
 

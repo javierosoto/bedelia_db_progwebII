@@ -13,6 +13,13 @@
 	<?php require_once '../error.php';?>
 	<?php require_once '../funcion_sql/funciones_sql.php';?>
 	<?php require_once '../funcion_sql/conexion.php';?>
+
+	<!-- Bootstrap --> 
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/style.css" rel="stylesheet">
+
+	
 	
 </head>
 
@@ -22,17 +29,19 @@
 
 	</header>
 	<article>
-			<form align="center" name="baja_comision_form" action="baja_comision_sql.php" method="post" >
+			<form role="form"  align="center" name="baja_comision_form" action="../funcion_sql/bajas/baja_comision_sql.php" method="post" >
+				<div class="form-group">
 				<?php $con = conectar();?>
 
 				<!-- seleccionar el aula a dar de baja -->
-				<label align="left">Seleccione comision</label>
+				<label>Seleccione comision</label>
 				
-				<?php $result = sql_tabla_todo($con,"comision");?>
-				<select name="baja_id_cargo">
+				<?php $result = sql_comision($con);?>
+				
+				<select name="baja_id_comision">
 					<?php foreach ($result as $valor):?>
-						<option value="<?php echo $valor['id'];?>">
-							<?php echo $valor['descripcion_comision'] ;?>
+						<option value="<?php echo $valor['id_co'];?>">
+							<?php echo $valor['descripcion_comision']." - ".$valor['nombre_carrera'] ;?>
 						</option>
 					<?php endforeach;?>
 					
@@ -42,12 +51,18 @@
 				<br>
 				<br>
 
-				<input type="submit" value="Cancelar" />
+				<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+				
 				<input type="submit" value="Borrar" />
 				
-			
+				</div>
 			</form>
 		</article>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bootstrap/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
 	
 </body>
 

@@ -20,14 +20,15 @@
 	try {
 
 		//armamos el sql para dar de alta el profesor
-		$sql = "INSERT INTO
-						persona
-						(id, nro_doc, ape_nom, direccion, fecha_nac, sexo_id, tipo_doc_id)
-				VALUES
-						(NULL, :doc, :ape_nombre, :domicilio, :fecha_nacimiento, :sexo, :tp_doc)";
-				//VALUES ('".$nro_doc."','".$ape_nom."','".$direccion."','".$fecha_nac."',".$sexo.",".$tipo_doc.");";
+		$sql = "INSERT INTO persona
+						(nro_doc, ape_nom, direccion, fecha_nac, sexo_id, tipo_doc_id) VALUES ('".$nro_doc."','".$ape_nom."','".$direccion."','".$fecha_nac."',".$sexo.",".$tipo_doc.");";
 
-
+						
+					//~ VALUES
+						//~ (NULL, :doc, :ape_nombre, :domicilio, :fecha_nacimiento, :sexo, :tp_doc)";
+				
+		//~ 
+	
 
 		//preparamos un statement con el sql anterior
 		$stmt = $con->prepare($sql);
@@ -52,24 +53,21 @@
 		
 	}
 
-
-	echo $nro_doc;
-
-
 	
 
+	echo "DNI:".$nro_doc."<br>";
+	echo "tipo:".$tipo_doc;
 
-	$sql_id ="SELECT * FROM persona WHERE nro_doc = :doc AND tipo_doc_id = :tp_doc";
-
+	$sql_id ="SELECT id FROM persona WHERE nro_doc = :doc AND tipo_doc_id = :tp_doc";
+	//~ $sql_id ="SELECT id FROM persona WHERE nro_doc = '".$nro_doc."' AND tipo_doc_id = ".$tipo_doc.";";
+    echo "<br>SQL:".$sql_id;
 	//preparamos un statement con el sql anterior
 	$stmt = $con->prepare($sql_id);
 
-	echo $sql_id;
-	
 	//especificamos 
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-	$stmt = $con->prepare($sql_id);
+	
 
 	$stmt->bindParam(':doc', $nro_doc);
 	$stmt->bindParam(':tp_doc', $tipo_doc);
@@ -78,9 +76,10 @@
 
 			
 	$results = $stmt->fetch();
+
 	var_dump($results);
 
-	$id_persona = $results['id'];
+	$id_persona = $results;
 	
 
 
@@ -92,9 +91,10 @@
 	try {
 
 		//armamos el sql para dar de alta el profesor
-		$sql_prof = "INSERT INTO bedelia_db.profesor (cargo_id, persona_id) VALUES (".$cargo.",".$id_persona.")";
+		//$sql_prof = "INSERT INTO bedelia_db.profesor (cargo_id, persona_id) VALUES (".$cargo.",".$id_persona.")";
+		$sql_prof = "INSERT INTO profesor (cargo_id, persona_id) VALUES (".$cargo.",".$id_persona['id'].");";
 
-		
+		echo $sql_prof;
 
 		//preparamos un statement con el sql anterior
 		$stmt = $con->prepare($sql_prof);
@@ -103,8 +103,6 @@
 		//$stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 		$stmt->execute();		
-
-		echo $sql_prof;
 	
 	} catch (Exception $e) {
 		echo 'Error de conexion a la DB:'.$e->getMassage();
@@ -113,4 +111,4 @@
 	}
 
 	
-	header('Location:../../abm/abm_profesor.php');
+	header('Location:../../abm_menu.php');

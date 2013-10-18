@@ -21,9 +21,9 @@
 
 		//armamos el sql
 		$sql = "INSERT INTO
-					persona (id, nro_doc, ape_nom, direccion, fecha_nac, sexo_id, tipo_doc_id)
+					persona (nro_doc, ape_nom, direccion, fecha_nac, sexo_id, tipo_doc_id)
 				VALUES
-							(NULL, :doc, :ape_nombre, :domicilio, :fecha_nacimiento, :sexo, :tp_doc);";
+							(:doc, :ape_nombre, :domicilio, :fecha_nacimiento, :sexo, :tp_doc);";
 
 
 
@@ -57,13 +57,7 @@
 	 */
 	 try
 	 {
-		$sql_pers ="SELECT
-						id
-					FROM
-						persona
-					WHERE
-						tipo_doc_id = :tipo and
-						nro_doc = :doc;";
+		$sql_pers ="SELECT id FROM persona WHERE tipo_doc_id = :tipo and nro_doc = :doc limit 1;";
 
 		//preparamos un statement con el sql anterior
 		$stmt = $con->prepare($sql_pers);
@@ -77,9 +71,10 @@
 
 		$stmt->execute();
 
-		$results = $stmt->fetch();
+		$result = $stmt->fetch();
 
-		$id_pers = $results['id'];
+		var_dump ($result);
+		$id_pers = $result['id'];
 
 
 	}catch (Exception $e){
@@ -88,10 +83,13 @@
 
 		}
 
+
 	try
 	{
-		$sql_alum="INSERT INTO alumno (id, persona_id, estado_id)
-					VALUES (NULL, :pers, :estado);";
+		$sql_alum="INSERT INTO alumno (persona_id, estado_id) VALUES (:pers, :estado)";
+
+		
+					//~ VALUES (".$id_pers.",".$opt_carrera.");";
 
 		$stmt = $con->prepare($sql_alum);
 
@@ -103,9 +101,7 @@
 
 		$stmt->execute();
 	
-		echo $sql_alum;
-		echo $id_pers."<br>";
-		echo $opt_carrera;
+	echo $sql_alum;
 
 	}catch (Exception $e){
 		echo 'Error de conexion a la DB : '.$e->getMassage();
@@ -113,4 +109,4 @@
 
 		}
 	
-	header('Location:../../abm/abm_alumno.php');
+	header('Location:../../abm_menu.php');

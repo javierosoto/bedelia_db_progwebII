@@ -35,6 +35,6 @@
 		
 	}
 
-	echo "registro ingresado corectamente :)";
+	
 
-	header('Location:../../abm/abm_tipo_doc.php');
+	header('Location:../../abm_menu.php');

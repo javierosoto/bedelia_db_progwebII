@@ -33,7 +33,7 @@
 		
 	}
 
-	echo "registro borrado corectamente :)";
 
 
-	header('Location:../../abm/abm_tipo_doc.php');
+
+	header('Location:../../abm_menu.php');

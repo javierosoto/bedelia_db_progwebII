@@ -45,9 +45,9 @@
 				<br>
 				<br>
 
-				<input type="submit" value="Cancelar" onclick="location.href='../abm/abm_profesor.php';" />
-				<input type="submit" value="Borrar" />
+<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 				
+				<input type="submit" value="Borrar" />				
 			
 			</form>
 		</article>

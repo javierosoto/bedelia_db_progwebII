@@ -49,4 +49,4 @@
 	}
 
 	
-	header('Location:../../abm/abm_persona.php');
+	header('Location:../../abm_menu.php');

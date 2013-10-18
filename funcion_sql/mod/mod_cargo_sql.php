@@ -35,7 +35,6 @@
 		
 	}
 
-	echo "<h1>registro modificado corectamente :)</h1>";
 	
 
-	header('Location:../../abm/abm_cargo.php');
+	header('Location:../../abm_menu.php');

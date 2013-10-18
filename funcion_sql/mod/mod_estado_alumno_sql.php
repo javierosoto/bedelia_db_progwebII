@@ -38,7 +38,6 @@ echo "id - ".$id_estado_alumno." nombre:".$estado_alumno;
 		
 	}
 
-	echo "<h1>registro modificado corectamente :)</h1>";
+
 	
-	
-	//header('Location:../../abm/abm_estado_alumno.php');
+	header('Location:../../abm_menu.php');

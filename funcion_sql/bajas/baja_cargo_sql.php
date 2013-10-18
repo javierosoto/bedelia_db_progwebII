@@ -32,4 +32,4 @@
 	}
 
 	
-	header('Location:../../abm/abm_cargo.php');
+	header('Location:../../abm_menu.php');

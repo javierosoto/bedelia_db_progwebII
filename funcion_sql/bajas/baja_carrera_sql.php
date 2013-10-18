@@ -36,4 +36,4 @@
 	echo "registro borrado corectamente :)";
 
 
-	header('Location:../../abm/abm_carrera.php');
+	header('Location:../../abm_menu.php');

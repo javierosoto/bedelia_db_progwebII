@@ -36,4 +36,4 @@
 	}
 	
 
-	header('Location:../../abm/abm_sexo.php');
+	header('Location:../../abm_menu.php');

@@ -33,6 +33,6 @@
 		
 	}
 
-	echo "registro borrado corectamente :)";
+	
 
-	header('Location:../../abm/abm_estado_alumno.php');
+	header('Location:../../abm_menu.php');

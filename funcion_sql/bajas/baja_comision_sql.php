@@ -4,28 +4,24 @@
 	require_once '../conexion.php';
 	
 	$con = conectar();
-	$aula = strtoupper($_POST['alta_cargo']);
-	
-  
+	$id_co = isset($_POST['baja_id_comision']) ? $_POST['baja_id_comision'] : null;
+
 
 
 	try {
 
-		
-
 		//armamos el sql
-		$sql = "INSERT INTO  bedelia_db.cargo (id ,descripcion_cargo)
-				VALUES (NULL , :desc_cargo)";
+		$sql = "DELETE FROM comision WHERE id = :id_co";
 
 		
 			
 		//preparamos un statement con el sql anterior
 		$stmt = $con->prepare($sql);
 		
-		//~ //especificamos 
-		//~ $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		//especificamos 
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-		$stmt->bindParam(':desc_cargo', $aula);
+		$stmt->bindParam(':id_co', $id_co);
 
 		$stmt->execute();
 		
@@ -37,5 +33,6 @@
 		
 	}
 
+	
 
 	header('Location:../../abm_menu.php');

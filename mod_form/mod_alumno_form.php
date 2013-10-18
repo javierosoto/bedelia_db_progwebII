@@ -119,8 +119,8 @@
 					<br>
 					<br>
 
-					<button type="submit">Modificar</button>
-					<button type="submit">Cancelar</button>
+					<input type="submit" value="Cancelar" onclick="location.href='../abm/abm_persona.php';" />
+				<input type="submit" value="Modificar" />
 				</form>
 			</article>
 		</body>

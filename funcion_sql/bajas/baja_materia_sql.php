@@ -4,18 +4,14 @@
 	require_once '../conexion.php';
 	
 	$con = conectar();
-	$aula = strtoupper($_POST['alta_cargo']);
-	
-  
+	$id_aula = $_POST['baja_id_materia'];
+
 
 
 	try {
 
-		
-
 		//armamos el sql
-		$sql = "INSERT INTO  bedelia_db.cargo (id ,descripcion_cargo)
-				VALUES (NULL , :desc_cargo)";
+		$sql = "DELETE FROM materia WHERE id = :id";
 
 		
 			
@@ -25,7 +21,7 @@
 		//~ //especificamos 
 		//~ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-		$stmt->bindParam(':desc_cargo', $aula);
+		$stmt->bindParam(':id', $id_aula);
 
 		$stmt->execute();
 		
@@ -37,5 +33,6 @@
 		
 	}
 
+	
 
 	header('Location:../../abm_menu.php');

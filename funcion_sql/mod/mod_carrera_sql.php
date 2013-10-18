@@ -38,7 +38,7 @@ echo "id - ".$id_carrera." nombre:".$carrera;
 		
 	}
 
-	echo "<h1>registro modificado corectamente :)</h1>";
+
 	
 
-	header('Location:../../abm/abm_carrera.php');
+	header('Location:../../abm_menu.php');

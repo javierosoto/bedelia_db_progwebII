@@ -22,17 +22,18 @@
 
 	</header>
 	<article>
-			<form align="center" name="baja_persona_form" action="baja_materia_sql.php" method="post" >
+			<form align="center" name="baja_persona_form" action="../funcion_sql/bajas/baja_materia_sql.php" method="post" >
 				<?php $con = conectar();?>
 
 				<!-- seleccionar el aula a dar de baja -->
 				<label align="left">Seleccione materia</label>
 				
-				<?php $result = sql_tabla_todo($con,"materia");?>
+				<?php $result = sql_tabla_materias_carrera($con);?>
+
 				<select name="baja_id_materia">
 					<?php foreach ($result as $valor):?>
-						<option value="<?php echo $valor['id'];?>">
-							<?php echo $valor['nombre_materia'] ;?>
+						<option value="<?php echo $valor['id_ma'];?>">
+							<?php echo $valor['nombre_materia']." - ".$valor['nombre_carrera'];?>
 						</option>
 					<?php endforeach;?>
 					
@@ -42,9 +43,9 @@
 				<br>
 				<br>
 
-				<input type="submit" value="Cancelar" />
-				<input type="submit" value="Borrar" />
+				<input type="submit" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 				
+				<input type="submit" value="Borrar" />				
 			
 			</form>
 		</article>
