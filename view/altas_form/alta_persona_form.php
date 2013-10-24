@@ -68,27 +68,27 @@
 							<!-- valor que se pasa por post al controller -->
 							<input type="hidden" name="desc_post" value="alta_pers"  />
 							<!-- ingresar el numero de documento -->
-							<label align="left">Documento</label>
+							<label>Documento</label>
 							<input type="text"  name="nro_doc_form"  placeholder="Documento" />
 							<br>
-							<label align="left">Apellido</label>
+							<label>Apellido</label>
 							<!-- ingresar el apellido que luego se concatenara con el nombre -->
 							<input type="text" name="apellido_form"  placeholder="Apellido" />
 							<br>
-							<label align="left">Nombre/s</label>
+							<label>Nombre/s</label>
 							<!-- ingresa el nombre -->
 							<input type="text" name="nombre_form"   placeholder="Nombre" />
 							<br>
-							<label align="left">Direccion</label>
+							<label>Direccion</label>
 							<!---ingresa direccion de la persona -->
 							<input type="text" name="direccion_form"  placeholder="Direccion"/>
 							<br>
 							<!-- ingresa fecha de nacimiento -->
-							<label align="left">Fecha de nacimiento</label>
+							<label>Fecha de nacimiento</label>
 							<input type="date" name="fecha_nac_form" value="Fecha Nacimiento"  />
 							<br>
 							<!-- selecciona el sexo -->
-							<label align="left">Sexo</label>
+							<label>Sexo</label>
 							<?php $result = sql_tabla_todo($con,"sexo");?>
 							<select name="sexo_form">
 								<?php foreach ($result as $valor):?>

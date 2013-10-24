@@ -3,9 +3,9 @@
 	<head>
 		<title>Alta Tipo Carrera</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<link href="../../controler/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="../../controler/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-		<link href="../../controler/bootstrap/css/personal.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -28,9 +28,9 @@
 			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../controler/bootstrap/js/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../controler/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../view/bootstrap/js/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../view/controler/bootstrap/js/bootstrap.min.js"></script>
 
 		
 	</body>

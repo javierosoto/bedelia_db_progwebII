@@ -1,8 +1,3 @@
-<?php
-	/*
-	 * dirname(__FILE__).'/../...' como hacer camino relativo 
-	*/
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -10,13 +5,13 @@
 		<title>Baja aula</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	
-	<?php require '../../error.php';?>
-	<?php require '../../controler/funcion_sql/funciones_sql.php';?>
-	<?php require '../../controler/funcion_sql/conexion.php';?>
+	<?php require dirname(__FILE__).'/../../error.php';?>
+	<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
+	<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
 	
-	<link href="../../controler/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../../controler/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="../../controler/bootstrap/css/personal.css" rel="stylesheet">
+	<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -51,10 +46,10 @@
 				</div>
 			</div>
 		</div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../controler/bootstrap/js/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../controler/bootstrap/js/bootstrap.min.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../view/bootstrap/js/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../view/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 
 </html>

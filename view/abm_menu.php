@@ -34,9 +34,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tipo Documento <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_tipo_doc_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_tipo_doc_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_tipo_doc_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_tipo_doc">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_tipo_doc">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_tipo_doc">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -45,9 +45,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sexo <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_sexo_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_sexo_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_sexo_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_sexo">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_sexo">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_sexo">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -56,9 +56,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cargo <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_cargo_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_cargo_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_cargo_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_cargo">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_cargo">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_cargo">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -67,9 +67,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Carrera <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_tipo_carrera_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_tipo_carrera_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_tipo_carrera_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_tipo_carrera">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_tipo_carrera">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_tipo_carrera">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -78,9 +78,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Estado Alumno <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_estado_alumno_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_estado_alumno_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_estado_alumno_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_estado_alumno">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_estado_alumno">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_estado_alumno">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -89,9 +89,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aula <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_aula_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_aula_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_aula_form.php">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=alta_aula">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_aula">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_aula">Modifica</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -100,10 +100,10 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Materia <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_materia_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_materia_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_materia_form.php">Modifica</a></li>
-					<li><a href="list_form/list_materia.php">Listado</a></li>
+					<li><a href="../controler/controler.php?descr=alta_materia">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_materia">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_materia">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=list_materia">Listado</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -112,10 +112,10 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Comision<b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_comision_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_comision_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_comision_form.php">Modifica</a></li>
-					<li><a href="list_form/list_comision.php">Listado</a></li>
+					<li><a href="../controler/controler.php?descr=alta_comision">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_comision">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_comision">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=list_comision">Listado</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -124,10 +124,10 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Elementos<b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_elemento_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_elemento_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_elemento_form.php">Modifica</a></li>
-					<li><a href="list_form/list_elemento.php">Listado</a></li>
+					<li><a href="../controler/controler.php?descr=alta_elemento">Alta</a></li>
+					<li><a href="../controler/controler.php?descr=baja_elemento">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_elemento">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=list_elemento">Listado</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -1,6 +1,8 @@
 <?php	
 
-	header('Location:view/abm_menu.php');
+
+	echo dirname(__FILE__);
+	header ("Location:view/abm_menu.php");
 
 ?>
 
