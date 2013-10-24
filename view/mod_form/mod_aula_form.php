@@ -1,7 +1,7 @@
 <?php
-	require_once '../error.php';
-	require_once '../funcion_sql/funciones_sql.php';
-	require_once '../funcion_sql/conexion.php';
+	require dirname(__FILE__).'/../../error.php';
+	require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';
+	require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';
 
 	if('POST' == $_SERVER['REQUEST_METHOD']):
 
@@ -61,9 +61,9 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		
 
-		<?php require_once '../error.php';?>
-		<?php require_once '../funcion_sql/funciones_sql.php';?>
-		<?php require_once '../funcion_sql/conexion.php';?>
+		<?php require dirname(__FILE__).'/../../error.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
 
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">

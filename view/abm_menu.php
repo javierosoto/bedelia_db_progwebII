@@ -29,33 +29,7 @@
 				</ul>
 			</li>
 		</ul>
-		
-	<!--
-		<ul class="nav navbar-nav">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesor <b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_profesor_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_profesor_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_profesor_form.php">Modifica</a></li>
-					<li><a href="list_form/list_profesor.php">Listado</a></li>
-				</ul>
-			</li>
-		</ul>
-
-
-		<ul class="nav navbar-nav">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumno <b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="altas_form/alta_alumno_form.php">Alta</a></li>
-					<li><a href="bajas_form/baja_alumno_form.php">Baja</a></li>
-					<li><a href="mod_form/mod_alumno_form.php">Modifica</a></li>
-				</ul>
-			</li>
-		</ul>
-	-->
-		
+	
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tipo Documento <b class="caret"></b></a>
@@ -66,7 +40,6 @@
 				</ul>
 			</li>
 		</ul>
-
 
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
@@ -134,7 +107,6 @@
 				</ul>
 			</li>
 		</ul>
-
 
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
