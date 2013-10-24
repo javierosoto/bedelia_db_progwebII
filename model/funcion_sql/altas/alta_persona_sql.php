@@ -163,6 +163,6 @@
 
 	}
 	unset ($_GET['descr']);
-	//~ header ("Location:".dirname(__FILE__)."/controler/controler.php?descr=salir");
+	//~ header ("Location:".dirname(__FILE__)."controler.php?descr=salir");
 	header ("Location:controler.php?descr=salir");
 	exit;

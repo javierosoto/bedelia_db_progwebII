@@ -1,11 +1,3 @@
-<?php
-
-
-	require '../error.php';
-	require_once '../funcion_sql/funciones_sql.php';
-	require_once '../funcion_sql/conexion.php';
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -14,17 +6,14 @@
 		<title>Modificar persona</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
-		<?php require_once '../error.php';?>
-		<?php require_once '../funcion_sql/funciones_sql.php';?>
-		<?php require_once '../funcion_sql/conexion.php';?>
-
-		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<!--
-		<link href="../bootstrap/css/style.css" rel="stylesheet">
-	-->
-		<link href="../bootstrap/css/personal.css" rel="stylesheet">
+		<?php require dirname(__FILE__).'/../../error.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
 		
+		<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
+			
 	</head>
 
 <body>
@@ -51,17 +40,16 @@
 				
 						<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
 						<input type="submit" value="Modificar" />
-						 
-					</fieldset>
+						 					</fieldset>
 				</form>
 			</div>
 		</div>
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../view/bootstrap/js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../view/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 <?php
 
-	//require_once '../../error.php';
-
+	require_once dirname(__FILE__).'/../../error.php';
 
 /*
  * funcion que devuelve los datos del tipo de carrera a modificar

@@ -21,11 +21,11 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Persona <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="../controler/controler.php?descr=alta_persona">Alta</a></li>
-					<li><a href="bajas_form/baja_persona_form.php?descr=baja_persona">Baja</a></li>
-					<li><a href="mod_form/mod_persona_form.php?descr=mod_persona">Modifica</a></li>
-					<li><a href="list_form/list_personas.php?descr=listado_persona">Listado personas</a></li>
-					<li><a href="list_form/list_profesor.php?descr=listado_profesor">Listado profesor</a></li>
-					<li><a href="list_form/list_alumnos.php?descr=listado_alumnos">Listado alumnos</a></li>
+					<li><a href="../controler/controler.php?descr=baja_persona">Baja</a></li>
+					<li><a href="../controler/controler.php?descr=mod_persona">Modifica</a></li>
+					<li><a href="../controler/controler.php?descr=listado_persona">Listado personas</a></li>
+					<li><a href="../controler/controler.php?descr=listado_profesor">Listado profesor</a></li>
+					<li><a href="../controler/controler.php?descr=listado_alumnos">Listado alumnos</a></li>
 				</ul>
 			</li>
 		</ul>

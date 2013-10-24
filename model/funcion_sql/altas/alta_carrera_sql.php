@@ -1,7 +1,8 @@
 <?php
 
-	require_once '../../error.php';
-	require_once '../conexion.php';
+	require_once dirname(__FILE__).'/../../../error.php';
+	require_once dirname(__FILE__).'/../conexion.php';
+	require_once dirname(__FILE__).'/../funciones_sql.php';
 	
 	$con = conectar();
 	
@@ -35,9 +36,7 @@
 		
 	}
 
-	echo $_GET['ventana'];
-
-	//~ if ($_GET['ventana'] != 'true')
-		//~ header('Location:../../abm_menu.php');
-	//~ else
-		//~ echo "<script languaje='javascript' type='text/javascript'>window.close();</script>";
+	unset ($_GET['descr']);
+	//~ header ("Location:".dirname(__FILE__)."controler.php?descr=salir");
+	header ("Location:controler.php?descr=salir");
+	exit;
