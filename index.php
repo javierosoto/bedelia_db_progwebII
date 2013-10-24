@@ -1,3 +1,16 @@
-<?php
+<?php	
 
-//TODO: REDIRECCIONAR/COMPLETAR CON EL PUNTO DE ENTRADA A LA APLICACION.
+	header('Location:view/abm_menu.php');
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+
+	<body>
+		
+		
+	</body>
+
+</html>
