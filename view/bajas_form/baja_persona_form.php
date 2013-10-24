@@ -30,9 +30,11 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="baja_persona_form" action="../funcion_sql/bajas/baja_persona_sql.php" method="post" >
+					<form name="baja_persona_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Baja persona</legend>
+							<!-- valor que se pasa por post al controller -->
+							<input type="hidden" name="desc_post" value="baja_pers"  />
 							<?php $con = conectar();?>
 							<!-- seleccionar el tipo de documento -->
 							<label>Seleccione persona</label>

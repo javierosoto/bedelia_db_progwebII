@@ -64,10 +64,10 @@
 								<?php endforeach;?>
 							</select>
 							<br>
-							<!-- ingresar el numero de documento -->
 
+							<!-- valor que se pasa por post al controller -->
 							<input type="hidden" name="desc_post" value="alta_pers"  />
-
+							<!-- ingresar el numero de documento -->
 							<label align="left">Documento</label>
 							<input type="text"  name="nro_doc_form"  placeholder="Documento" />
 							<br>

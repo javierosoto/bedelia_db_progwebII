@@ -2,18 +2,24 @@
 	/*
 	 * controlador de la aplicacion
 	 */
+	
 
-	switch ($_SERVER[REQUEST_METHOD]) {
+	switch ($_SERVER['REQUEST_METHOD']) {
 		
 		case 'POST':
 				
 			$descrip_post = isset($_POST['desc_post']) ? $_POST['desc_post'] : null;
-			echo $descrip_post."<br>";
+			echo $descrip_post." valor de desc_post <br>";
 			switch ($descrip_post){
 
 				case 'alta_pers':
-					echo dirname(__FILE__)."POST";
+					echo dirname(__FILE__)."alta personas POST";
 					require ("../model/funcion_sql/altas/alta_persona_sql.php");
+					break;
+
+				case 'baja_pers':
+					echo dirname(__FILE__)." baja personas POST";
+					require ("../model/funcion_sql/bajas/baja_persona_sql.php");
 					break;
 			}
 		case 'GET':
@@ -53,8 +59,8 @@
 					break;
 
 				case 'salir':
-					//~ require dirname(__FILE__).('/../view/abm_menu.php');
-					require dirname(__FILE__).('../view/abm_menu.php');
+					//~ echo dirname(__FILE__)." salir <br>";
+					header ('Location:../index.php');
 					break;
 				 }
 
