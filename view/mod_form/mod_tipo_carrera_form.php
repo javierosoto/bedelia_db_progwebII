@@ -35,7 +35,7 @@
 							<label>Carrera</label>
 							<input type="text" name="nombre_carrera" value="<?php echo $result['nombre_carrera']; ?>" >
 							<br>
-							<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							<input type="submit" value="Modificar"/>
 						</fieldset>
 					</form>
@@ -93,7 +93,7 @@
 						</select>
 						
 						<br>
-						<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+						<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 						<input type="submit" value="Modificar" />
 					
 					</fieldset>

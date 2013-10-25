@@ -64,12 +64,17 @@
 					<!-- seleccion de aula -->
 					<label><strong>Aula</strong></label>
 					<?php //$result = sql_tabla_todo($con,"aula");?> <!-- no necesito sql de carrera -->
-					<select id="id_materia"name="opt_materia">
-							<?php foreach ($result as $valor):?>
+					<select id="id_materia" name="opt_materia">
+							<?php //foreach ($result as $valor):?>
+<!--
 								<option value="<?php echo $valor['id'];?>">
-									<?php echo $valor['descripcion_aula'];?>
+-->
+								<option value="1"> 
+									<?php //echo $valor['descripcion_aula'];?>
+									juan	
+									<?php //echo $valor['descripcion_aula'];?>
 								</option>
-							<?php endforeach;?>
+							<?php //endforeach;?>
 						
 					</select>
 					<br>
@@ -91,7 +96,7 @@
 					<input type="button" value="Nuevo" onclick="" >
 					<br>
 
-					<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+					<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 					<input type="submit" value="Guardar" />
 				</fieldset>
 			</form>

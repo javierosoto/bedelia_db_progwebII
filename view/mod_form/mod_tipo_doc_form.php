@@ -19,18 +19,12 @@
 		<title>Modificar tipo DNI</title>
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<!--
-		<link href="../bootstrap/css/style.css" rel="stylesheet">
-	-->
 		<link href="../bootstrap/css/personal.css" rel="stylesheet">
 
 	</head>
 
-	<header>
-		
-	</header>
 	<body>
-		<article>
+
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span12">
@@ -42,7 +36,7 @@
 								<input type="text" name='mod_tipo_doc' value="<?php echo $tipo_documento['descripcion']; ?>" >
 								<br>
 								<br>
-								<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+								<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 								<input type="submit" value="Modificar"/>
 							</fieldset>
 						</form>
@@ -78,11 +72,6 @@
 </head>
 
 <body>
-
-	<header>
-
-	</header>
-	<article>
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
@@ -106,7 +95,7 @@
 							
 							<br>
 
-							<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							<input type="submit" value="Modificar" />
 						
 						</fieldset>

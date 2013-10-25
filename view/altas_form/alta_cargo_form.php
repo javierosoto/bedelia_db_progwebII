@@ -20,7 +20,7 @@
 							<input type="text" name="alta_cargo" placeholder="Ingrese tipo cargo" />
 							<br>
 							
-							<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							<input type="submit" value="Guardar"/>
 						</fieldset>
 					</form>

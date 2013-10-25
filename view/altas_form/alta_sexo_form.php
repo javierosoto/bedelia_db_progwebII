@@ -24,7 +24,7 @@
 							<input type="hidden" name="desc_post" value="alta_sexo"/>
 							<input type="text" name="alta_tipo_sexo" placeholder="Ingrese tipo sexo" />
 							<br>
-							<input class="btn" type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							
 							<input class="btn" type="submit" value="Guardar" />
 

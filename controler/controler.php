@@ -174,7 +174,24 @@
 					break;
 
 
+/*
+ * parte del abm elemento
+ */
 
+				case 'alta_elemento':
+					echo dirname(__FILE__).$descrip_post ." POST";
+					require dirname(__FILE__).("/../model/funcion_sql/altas/alta_elemento_sql.php");
+					break;
+
+				case 'baja_elemento':
+					echo dirname(__FILE__).$descrip_post ." POST";
+					require dirname(__FILE__).("/../model/funcion_sql/bajas/baja_elemento_sql.php");
+					break;
+
+				case 'mod_elemento':
+					echo dirname(__FILE__).$descrip_post ." POST";
+					require dirname(__FILE__).("/../model/funcion_sql/mod/mod_elemento_sql.php");
+					break;
 
 
 

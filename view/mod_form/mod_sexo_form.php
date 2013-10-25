@@ -97,7 +97,7 @@
 								</select>
 								
 								<br>
-								<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+								<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 								<input type="submit" value="Modificar" />
 								
 						</fieldset>

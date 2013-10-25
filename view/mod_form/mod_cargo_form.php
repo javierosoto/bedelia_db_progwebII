@@ -35,7 +35,7 @@
 							<label>Cargo</label>
 							<input type="text" name="desc_cargo" value="<?php echo $result['descripcion_cargo']; ?>" >
 							<br>
-							<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							<input type="submit" value="Modificar" />
 						</fieldset>
 					</form>
@@ -95,7 +95,7 @@
 
 							<br>
 				
-							<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+							<input type="button" value="Cancelar" onclick="location.href='../index.php';"/>
 							<input type="submit" value="Modificar"/>
 							
 						</fieldset>
