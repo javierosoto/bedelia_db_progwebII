@@ -21,19 +21,14 @@
 </head>
 
 <body>
-
-	<header>
-
-	</header>
-	<article>
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span6">
-					<form name="baja_tipo_dni_form" action="../funcion_sql/bajas/baja_tipo_doc_sql.php" method="post" >
+					<form name="baja_tipo_dni_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Baja</legend>
 							<?php $con = conectar();?>
-
+							<input type="hidden" name="desc_post" value="baja_tipo_doc"/>
 							<!-- seleccionar el tipo de documento a dar de baja -->
 							<label align="left">Seleccione tipo documento</label>
 							

@@ -17,10 +17,11 @@
 			<div class="row-fluid">
 				<div class="span12">
 
-					<form name="alta_sexo_form" action="../funcion_sql/altas/alta_sexo_sql.php" method="post" >
+					<form name="alta_sexo_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Alta sexo</legend>
 							<label>Sexo </label>
+							<input type="hidden" name="desc_post" value="alta_sexo"/>
 							<input type="text" name="alta_tipo_sexo" placeholder="Ingrese tipo sexo" />
 							<br>
 							<input class="btn" type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>

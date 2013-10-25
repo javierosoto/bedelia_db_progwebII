@@ -36,62 +36,63 @@
 		<div class="row-fluid">
 			<div class="span12">
 
-				<form role="form" name="alta_materia_form" action="../funcion_sql/altas/alta_comision_sql.php" method="post" >
+				<form  name="alta_materia_form" action="../controler/controler.php" method="post" >
 
 				<fieldset>
 					<legend>Alta comision</legend>
-				<!-- ingresa nombre de la comision -->
-				<label><strong>Comision</strong></label>
-				<input type="text" name="alta_comision_materia" placeholder="Ingrese comision" />
-				<br>
+					<input type="hidden" name="desc_post" value="alta_comision" />
+					<!-- ingresa nombre de la comision -->
+					<label><strong>Comision</strong></label>
+					<input type="text" name="alta_comision_materia" placeholder="Ingrese comision" />
+					<br>
 
-				<!-- *************************************************************** -->
-				<!-- seleccion de materia -->
-				<label><strong>Materia</strong></label>
-				<?php $con = conectar();?>
-				<?php $result_carrera = sql_tabla_todo($con,"carrera");?> <!-- sql de carrera -->
-				<select  id="id_carrera" name="opt_materia">
-						<?php foreach ($result_carrera as $valor):?>
-							<option value="<?php echo $valor['id'];?>">
-								<?php echo $valor['nombre_carrera'];?>
-							</option>
-						<?php endforeach;?>
-					
-				</select>
-				<br>
+					<!-- *************************************************************** -->
+					<!-- seleccion de materia -->
+					<label><strong>Materia</strong></label>
+					<?php $con = conectar();?>
+					<?php $result_carrera = sql_tabla_todo($con,"carrera");?> <!-- sql de carrera -->
+					<select  id="id_carrera" name="opt_materia">
+							<?php foreach ($result_carrera as $valor):?>
+								<option value="<?php echo $valor['id'];?>">
+									<?php echo $valor['nombre_carrera'];?>
+								</option>
+							<?php endforeach;?>
+						
+					</select>
+					<br>
 
-				<!-- seleccion de aula -->
-				<label><strong>Aula</strong></label>
-				<?php //$result = sql_tabla_todo($con,"aula");?> <!-- no necesito sql de carrera -->
-				<select id="id_materia"name="opt_materia">
-						<?php foreach ($result as $valor):?>
-							<option value="<?php echo $valor['id'];?>">
-								<?php echo $valor['descripcion_aula'];?>
-							</option>
-						<?php endforeach;?>
-					
-				</select>
-				<br>
+					<!-- seleccion de aula -->
+					<label><strong>Aula</strong></label>
+					<?php //$result = sql_tabla_todo($con,"aula");?> <!-- no necesito sql de carrera -->
+					<select id="id_materia"name="opt_materia">
+							<?php foreach ($result as $valor):?>
+								<option value="<?php echo $valor['id'];?>">
+									<?php echo $valor['descripcion_aula'];?>
+								</option>
+							<?php endforeach;?>
+						
+					</select>
+					<br>
 
-				<!-- *************************************************************** -->
+					<!-- *************************************************************** -->
 
-				<!-- seleccion profesor para la comision -->
-				<label><strong>Profesor</strong></label>
-				<?php $result = sql_profesores($con);?>
-				<select  name="opt_profesor">
-						<?php foreach ($result as $valor):?>
-							<option value="<?php echo $valor['prof_id'];?>">
-								<?php $valor['ape_nom'] = str_replace(',',' ',$valor['ape_nom']);?>
-								<?php echo $valor['ape_nom'];?>
-							</option>
-						<?php endforeach;?>
-					
-				</select>
-				<input type="button" value="Nuevo" onclick="" >
-				<br>
+					<!-- seleccion profesor para la comision -->
+					<label><strong>Profesor</strong></label>
+					<?php $result = sql_profesores($con);?>
+					<select  name="opt_profesor">
+							<?php foreach ($result as $valor):?>
+								<option value="<?php echo $valor['prof_id'];?>">
+									<?php $valor['ape_nom'] = str_replace(',',' ',$valor['ape_nom']);?>
+									<?php echo $valor['ape_nom'];?>
+								</option>
+							<?php endforeach;?>
+						
+					</select>
+					<input type="button" value="Nuevo" onclick="" >
+					<br>
 
-				<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
-				<input type="submit" value="Guardar" />
+					<input type="button" value="Cancelar" onclick="location.href='../abm_menu.php';"/>
+					<input type="submit" value="Guardar" />
 				</fieldset>
 			</form>
 		</div>

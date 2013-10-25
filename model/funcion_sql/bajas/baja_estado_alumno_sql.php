@@ -1,7 +1,8 @@
 <?php
 
-	require_once '../../error.php';
-	require_once '../conexion.php';
+	require_once dirname(__FILE__).'/../../../error.php';
+	require_once dirname(__FILE__).'/../conexion.php';
+	require_once dirname(__FILE__).'/../funciones_sql.php';
 	
 	$con = conectar();
 	$estado_alumno = $_POST['baja_estado_alumno'];
@@ -34,5 +35,7 @@
 	}
 
 	
-
-	header('Location:../../abm_menu.php');
+unset ($_GET['descr']);
+	//~ header ("Location:".dirname(__FILE__)."controler.php?descr=salir");
+	header ("Location:controler.php?descr=salir");
+	exit;

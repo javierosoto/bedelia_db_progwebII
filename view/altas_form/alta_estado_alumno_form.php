@@ -13,10 +13,12 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12">
-				<form name="alta_tipo_estado_alumno_form" action="../funcion_sql/altas/alta_estado_alumno_sql.php" method="post" >
+				<form name="alta_tipo_estado_alumno_form" action="../controler/controler.php" method="post" >
 					<fieldset>
 						<legend>Alta condicion de alumno</legend>
 					<label>Condicion de alumno </label>
+
+					<input type="hidden" name="desc_post" value="alta_estado_alumno" />
 					<input type="text" name="alta_tipo_estado_form" placeholder="Ingrese tipo de estador alumno" pattern="\w+" title="Solo letras" />
 					<br>
 

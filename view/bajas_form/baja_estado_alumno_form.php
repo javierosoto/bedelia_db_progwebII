@@ -24,11 +24,12 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12">
-				<form name="baja_estado_alumno_form" action="../funcion_sql/bajas/baja_estado_alumno_sql.php" method="post" >
+				<form name="baja_estado_alumno_form" action="../controler/controler.php" method="post" >
 					<fieldset>
 						<legend>Baja condicion alumno</legend>
 						<?php $con = conectar();?>
 
+						<input type="hidden" name="desc_post" value="baja_estado_alumno" />
 						<!-- seleccionar el estado del alumno a dar de baja -->
 						<label align="left">Seleccione estado</label>
 						

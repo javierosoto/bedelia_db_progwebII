@@ -6,9 +6,6 @@
 	
 	$con = conectar();
 	$estado = strtoupper($_POST['alta_tipo_estado_form']);
-	
-  
-
 
 	try {
 

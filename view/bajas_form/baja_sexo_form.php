@@ -29,11 +29,11 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="baja_sexo_form" action="../funcion_sql/bajas/baja_sexo_sql.php" method="post" >
+					<form name="baja_sexo_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Baja sexo</legend>
 							<?php $con = conectar();?>
-
+							<input type="hidden" name="desc_post" value="baja_sexo"/>
 							<!-- seleccionar el aula a dar de baja -->
 							<label align="left">Seleccione sexo</label>
 							

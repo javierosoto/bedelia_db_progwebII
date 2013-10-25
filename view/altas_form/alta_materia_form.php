@@ -17,10 +17,11 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form  name="alta_materia_form" action="../funcion_sql/altas/alta_materia_sql.php" method="post" >
+					<form  name="alta_materia_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Alta materia</legend>
 							<!-- xxxxxxxxxxxxx -->
+							<input type="hidden" name="desc_post" value="alta_materia"/>
 							<label>Nombre materia</label>
 							<input type="text" name="alta_nombre_materia" placeholder="Ingrese nombre materia" />
 							<br>

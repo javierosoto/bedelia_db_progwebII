@@ -26,7 +26,7 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="modificar_sexo" method="post" action="../funcion_sql/mod/mod_sexo_sql.php">
+					<form name="modificar_sexo" method="post" action="../controler/controler.php">
 						<fieldset>
 							<legend>Modificar sexo</legend>
 							<input type="hidden" name="mod_sexo" value="<?php echo $result['id']; ?>">

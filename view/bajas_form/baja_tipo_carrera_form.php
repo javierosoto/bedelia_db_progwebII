@@ -8,7 +8,7 @@
 <head>
 	<title>Baja carrera</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<?php require dirname(__FILE__).'/../../error.php';?>
 	<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
@@ -18,6 +18,7 @@
 	<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
 
+
 	
 </head>
 
@@ -25,11 +26,11 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="sapn12">
-				<form name="baja_carrera_form" action="../funcion_sql/bajas/baja_carrera_sql.php" method="post" >
+				<form name="baja_carrera_form" action="../controler/controler.php" method="post" >
 					<fieldset>
 						<legend>Baja carrera</legend>
 						<?php $con = conectar();?>
-
+						<input type="hidden" name="desc_post" value="baja_carrera"
 						<!-- seleccionar el aula a dar de baja -->
 						<label align="left">Seleccione carrera</label>
 						

@@ -12,10 +12,11 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form  name="alta_cargo_form" action="../funcion_sql/altas/alta_cargo_sql.php" method="post" >
+					<form  name="alta_cargo_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Alta cargo</legend>
 							<label>Tipo de cargo </label>
+							<input type="hidden" name="desc_post" value="alta_cargo"/>
 							<input type="text" name="alta_cargo" placeholder="Ingrese tipo cargo" />
 							<br>
 							

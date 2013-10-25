@@ -26,7 +26,7 @@
 					<div align="center">
 						<h1 class="text-center text-info">
 							<label>Listado de personas <?php echo "" ;?></label>
-						</h3>
+						</h1>
 					</div>
 					<br>
 					<br>

@@ -4,25 +4,27 @@
 	<head>
 		<title>Baja aula</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
+		
+		<?php require dirname(__FILE__).'/../../error.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
 	
-	<?php require dirname(__FILE__).'/../../error.php';?>
-	<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
-	<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
-	
-	<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
+
 	</head>
 
 	<body>
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="baja_persona_form" action="../funcion_sql/bajas/baja_aula_sql.php" method="post" >
+					<form name="baja_persona_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Baja aula</legend>
 							<?php $con = conectar();?>
 
+							<input type="hidden" name="desc_post" value="baja_aula"/>
 							<!-- seleccionar el aula a dar de baja -->
 							<label align="left">Seleccione aula</label>
 							

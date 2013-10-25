@@ -26,11 +26,12 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12">
-				<form name="baja_comision_form" action="../funcion_sql/bajas/baja_comision_sql.php" method="post" >
+				<form name="baja_comision_form" action="../controler/controler.php" method="post" >
 					<fieldset>
 						<legend>Baja comision</legend>
 						<?php $con = conectar();?>
 
+						<input type="hidden" name="desc_post" value="baja_comision" />
 						<!-- seleccionar el aula a dar de baja -->
 						<label>Seleccione comision</label>
 						

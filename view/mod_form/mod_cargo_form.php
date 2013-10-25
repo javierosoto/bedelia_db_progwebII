@@ -28,7 +28,7 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="modificar_cargo" method="post" action="../funcion_sql/mod/mod_cargo_sql.php">
+					<form name="modificar_cargo" method="post" action="../controler/controler.php">
 						<fieldset>
 							<legend>Modificar cargo</legend>
 							<input type="hidden" name="mod_cargo" value="<?php echo $result['id']; ?>">

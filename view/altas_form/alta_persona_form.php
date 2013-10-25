@@ -1,50 +1,46 @@
 <!DOCTYPE html>
+<html>
+	<head>
+		<title>Alta persona</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
 
-<head>
-	<title>Alta persona</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<?php require dirname(__FILE__).'/../../error.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
+		<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
 
-	<?php require dirname(__FILE__).'/../../error.php';?>
-	<?php require dirname(__FILE__).'/../../model/funcion_sql/funciones_sql.php';?>
-	<?php require dirname(__FILE__).'/../../model/funcion_sql/conexion.php';?>
+		<!-- script que habilita los campos de alumno o profesor -->
+		<script>
+			function disableSelect()
+			{
+				if(document.alta_persona_form.checkbox_alumno.checked){
+					document.alta_persona_form.id_estado_alumno.disabled=false;
+					document.alta_persona_form.id_carrera_alumno.disabled=false;
+				}else{
+					document.alta_persona_form.id_estado_alumno.disabled=true;
+					document.alta_persona_form.id_carrera_alumno.disabled=true;
+				}
 
-	<!-- script que habilita los campos de alumno o profesor -->
-	<script>
-	function disableSelect()
-	{
-		if(document.alta_persona_form.checkbox_alumno.checked){
-			document.alta_persona_form.id_estado_alumno.disabled=false;
-			document.alta_persona_form.id_carrera_alumno.disabled=false;
-		}else{
-			document.alta_persona_form.id_estado_alumno.disabled=true;
-			document.alta_persona_form.id_carrera_alumno.disabled=true;
-		}
-
-		if(document.alta_persona_form.checkbox_profesor.checked){
-			document.alta_persona_form.id_cargo.disabled=false;
-		}else{
-				document.alta_persona_form.id_cargo.disabled=true;
-		}
-
-
-	}
-	-->
-	</script>
-
-	<link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../view/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="../view/bootstrap/css/personal.css" rel="stylesheet">
+				if(document.alta_persona_form.checkbox_profesor.checked){
+					document.alta_persona_form.id_cargo.disabled=false;
+				}else{
+						document.alta_persona_form.id_cargo.disabled=true;
+				}
 
 
+			}
+		</script>
 
-	
-</head>
+		
+
+
+
+		
+	</head>
 
 <body>
-		<header>
-
-		</header>
-
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span8">

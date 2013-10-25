@@ -20,11 +20,12 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="baja_persona_form" action="../funcion_sql/bajas/baja_cargo_sql.php" method="post" >
+					<form name="baja_persona_form" action="../controler/controler.php" method="post" >
 						<fieldset>
 							<legend>Baja cargo</legend>
 							<?php $con = conectar();?>
 
+							<input type="hidden" name="desc_post" value="baja_cargo" />
 							<!-- seleccionar el aula a dar de baja -->
 							<label align="left">Seleccione cargo</label>
 							<?php $result = sql_tabla_todo($con,"cargo");?>
